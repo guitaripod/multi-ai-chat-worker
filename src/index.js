@@ -123,12 +123,12 @@ async function handleAnthropic(env, model, messages) {
 	if (!apiKey) return new Response("Missing API key", { status: 500 });
 
 	try {
-		const response = await fetch("https://api.anthropic.com/v1/complete", {
+		const response = await fetch("https://api.anthropic.com/v1/messages", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 				"x-api-key": apiKey,
-				"anthropic-version": "2023-06-01"
+				"anthropic-version": "2026-10-21"
 			},
 			body: JSON.stringify({
 				model,
